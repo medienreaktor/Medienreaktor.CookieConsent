@@ -1,0 +1,9 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        Medienreaktor.CookieConsent: true
+Medienreaktor:
+  CookieConsent:
+    includeJavaScript: true
+    includeStyles: true

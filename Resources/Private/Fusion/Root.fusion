@@ -1,0 +1,32 @@
+prototype(Neos.Neos:Page) {
+    head {
+        cookieConsent = Medienreaktor.CookieConsent
+        cookieConsent {
+            @position = 'end'
+        }
+    }
+}
+
+prototype(Medienreaktor.CookieConsent) < prototype(Neos.Fusion:Array) {
+    styles = Neos.Fusion:Tag {
+        tagName = 'link'
+        attributes {
+            rel = 'stylesheet'
+            type = 'text/css'
+            src = Neos.Fusion:ResourceUri {
+                path = 'resource://Medienreaktor.CookieConsent/Public/Styles/cookieconsent.min.css'
+            }
+        }
+        @if.includeStyles = ${Configuration.setting('Medienreaktor.CookieConsent.includeStyles')}
+    }
+    javaScript = Neos.Fusion:Tag {
+        tagName = 'script'
+        attributes {
+            type = 'text/javascript'
+            src = Neos.Fusion:ResourceUri {
+                path = 'resource://Medienreaktor.CookieConsent/Public/JavaScript/cookieconsent.min.js'
+            }
+        }
+        @if.includeJavaScript = ${Configuration.setting('Medienreaktor.CookieConsent.includeJavaScript')}
+    }
+}
