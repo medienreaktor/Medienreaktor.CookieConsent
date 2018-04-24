@@ -1,0 +1,23 @@
+{
+    "description": "Cookie Consent for Neos",
+    "type": "neos-package",
+    "name": "medienreaktor/cookieconsent",
+    "license": "MIT",
+    "homepage": "https://www.medienreaktor.de",
+    "authors": [
+        {
+            "name": "Daniel Kestler",
+            "email": "daniel.kestler@medienreaktor.de",
+            "homepage": "https://www.medienreaktor.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "neos/neos": "*"
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Medienreaktor.CookieConsent"
+        }
+    }
+}
