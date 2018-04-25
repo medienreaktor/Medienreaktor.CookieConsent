@@ -7,3 +7,16 @@ Medienreaktor:
   CookieConsent:
     includeJavaScript: true
     includeStyles: true
+    translationsPackage: 'Medienreaktor.CookieConsent'
+    settings:
+      type: null
+      position: 'bottom'
+      theme: 'block'
+      palette:
+        popup:
+          background: '#333'
+          text: '#fff'
+        button:
+          background: '#fff'
+          text: '#333'
+    informationNode: null

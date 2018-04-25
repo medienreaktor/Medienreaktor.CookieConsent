@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Medienreaktor.CookieConsent" source-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="message">
+                <source>This website uses cookies to ensure you get the best experience on our website.</source>
+            </trans-unit>
+            <trans-unit id="link">
+                <source>Learn more</source>
+            </trans-unit>
+            <trans-unit id="allow">
+                <source>Allow cookies</source>
+            </trans-unit>
+            <trans-unit id="deny">
+                <source>Decline</source>
+            </trans-unit>
+            <trans-unit id="dismiss">
+                <source>Okay</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

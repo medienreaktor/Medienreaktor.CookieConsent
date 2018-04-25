@@ -1,7 +1,6 @@
 prototype(Neos.Neos:Page) {
     head {
-        cookieConsent = Medienreaktor.CookieConsent
-        cookieConsent {
+        cookieConsent = Medienreaktor.CookieConsent {
             @position = 'end'
         }
     }
@@ -13,12 +12,13 @@ prototype(Medienreaktor.CookieConsent) < prototype(Neos.Fusion:Array) {
         attributes {
             rel = 'stylesheet'
             type = 'text/css'
-            src = Neos.Fusion:ResourceUri {
+            href = Neos.Fusion:ResourceUri {
                 path = 'resource://Medienreaktor.CookieConsent/Public/Styles/cookieconsent.min.css'
             }
         }
         @if.includeStyles = ${Configuration.setting('Medienreaktor.CookieConsent.includeStyles')}
     }
+
     javaScript = Neos.Fusion:Tag {
         tagName = 'script'
         attributes {
@@ -29,4 +29,34 @@ prototype(Medienreaktor.CookieConsent) < prototype(Neos.Fusion:Array) {
         }
         @if.includeJavaScript = ${Configuration.setting('Medienreaktor.CookieConsent.includeJavaScript')}
     }
+
+    loadingScript = Neos.Fusion:Value {
+        @context {
+            settings = Neos.Fusion:RawArray {
+                type = ${Configuration.setting('Medienreaktor.CookieConsent.settings.type')}
+                position = ${Configuration.setting('Medienreaktor.CookieConsent.settings.position')}
+                theme = ${Configuration.setting('Medienreaktor.CookieConsent.settings.theme')}
+                palette = ${Configuration.setting('Medienreaktor.CookieConsent.settings.palette')}
+
+                content = Neos.Fusion:RawArray {
+                    message = ${Translation.translate('message', null, [], 'CookieConsent', Configuration.setting('Medienreaktor.CookieConsent.translationsPackage'))}
+                    link = ${Translation.translate('link', null, [], 'CookieConsent', Configuration.setting('Medienreaktor.CookieConsent.translationsPackage'))}
+                    allow = ${Translation.translate('allow', null, [], 'CookieConsent', Configuration.setting('Medienreaktor.CookieConsent.translationsPackage'))}
+                    deny = ${Translation.translate('deny', null, [], 'CookieConsent', Configuration.setting('Medienreaktor.CookieConsent.translationsPackage'))}
+                    dismiss = ${Translation.translate('dismiss', null, [], 'CookieConsent', Configuration.setting('Medienreaktor.CookieConsent.translationsPackage'))}
+
+                    href = Neos.Neos:NodeUri {
+                        node = ${q(site).find(Configuration.setting('Medienreaktor.CookieConsent.informationNode')).get(0)}
+                        @if.hasInformationNode = ${Configuration.setting('Medienreaktor.CookieConsent.informationNode') ? true : false }
+                    }
+                }
+
+                @process.json = ${Json.stringify(value)}
+            }
+        }
+
+        @process.wrap = ${'<script>window.addEventListener("load", function() { window.cookieconsent.initialise(' + settings + ') });</script>'}
+    }
+
+    @if.inFrontend = ${site.context.inBackend == false}
 }
