@@ -2,10 +2,14 @@
 Cookie Consent for Neos, based on https://cookieconsent.insites.com
 
 ## Installation
-This package is not yet on Packagist, but will be soon. In the meantime, it can be used by adding the repository URL to your composer.json and require medienreaktor/cookieconsent@dev-master.
+This package can be installed using composer:
+
+```
+composer require medienreaktor/cookieconsent
+```
 
 ## Configuration
-Configuration options can be seen in Settings.yaml. In the settings-array, most settings of the original Cookie Consent JavaScript can be configured, e.g.
+Configuration options can be seen in Settings.yaml. In the settings-array, most settings of the original Cookie Consent JavaScript can be configured, e.g.:
 
 ```
 Medienreaktor:
