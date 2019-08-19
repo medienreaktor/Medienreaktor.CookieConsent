@@ -12,9 +12,7 @@ prototype(Medienreaktor.CookieConsent) < prototype(Neos.Fusion:Array) {
         attributes {
             rel = 'stylesheet'
             type = 'text/css'
-            href = Neos.Fusion:ResourceUri {
-                path = 'resource://Medienreaktor.CookieConsent/Public/Styles/cookieconsent.min.css'
-            }
+            href = 'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css'
         }
         @if.includeStyles = ${Configuration.setting('Medienreaktor.CookieConsent.includeStyles')}
     }
@@ -24,9 +22,7 @@ prototype(Medienreaktor.CookieConsent) < prototype(Neos.Fusion:Array) {
         attributes {
             type = 'text/javascript'
             async = 'true'
-            src = Neos.Fusion:ResourceUri {
-                path = 'resource://Medienreaktor.CookieConsent/Public/JavaScript/cookieconsent.min.js'
-            }
+            src = 'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js'
         }
         @if.includeJavaScript = ${Configuration.setting('Medienreaktor.CookieConsent.includeJavaScript')}
     }

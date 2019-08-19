@@ -34,6 +34,3 @@ Medienreaktor:
   CookieConsent:
     informationNode: '#5a30fe73-e487-4301-a547-838b6440e33d'
 ```
-
-## License
-Licensed under MIT license, as is the original Cookie Consent JavaScript by Insites.
