@@ -1,12 +1,12 @@
 prototype(Neos.Neos:Page) {
     head {
-        cookieConsent = Medienreaktor.CookieConsent {
+        cookieConsent = Medienreaktor.CookieConsent:CookieConsent {
             @position = 'end'
         }
     }
 }
 
-prototype(Medienreaktor.CookieConsent) < prototype(Neos.Fusion:Array) {
+prototype(Medienreaktor.CookieConsent:CookieConsent) < prototype(Neos.Fusion:Array) {
     styles = Neos.Fusion:Tag {
         tagName = 'link'
         attributes {
